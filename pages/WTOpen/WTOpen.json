@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "开源",
-  "usingComponents": {
-    "openlist-item": "/components/openListItem/cmp"
-  }
-}

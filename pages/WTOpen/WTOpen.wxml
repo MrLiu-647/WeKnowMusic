@@ -1,6 +1,0 @@
-<view class='listContainer'>
-<block wx:for = "{{listArray}}" wx:key = "*this">
-<openlist-item imageSrc = '{{item.opensource_logo}}' title = '{{item.opensource_name}}'detail = '{{item.opensource_desc}}'link = '{{item.opensource_homepage}}'catch:openItemTap = 'openItemTap'></openlist-item>
-</block>
-</view>
-
