@@ -1,0 +1,8 @@
+<view class='container'>
+  <view class='content'>
+    <view class='imageView'>
+      <image class='imagecontent' src='/images/more/downloadAppQRcode.png'></image>
+    </view>
+    <text class='des'>扫描二维码，可下载或更新应用</text>
+  </view>
+</view>

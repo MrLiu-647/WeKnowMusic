@@ -1,0 +1,20 @@
+
+<scroll-view class='container' scroll-x="true" scroll-with-animation="true" scroll-into-view="{{menuItemId}}">
+  <view class="type {{index == currentIndex ? 'active' : ''}}" wx:for="{{menuItems}}" wx:key="*this" bindtap='itemOnTap' id="{{'item'+index}}" data-index="{{index}}">
+    <text>{{item}}</text>
+  </view>
+</scroll-view>
+
+
+<view class='listContainer'>
+
+<homelist_item imageUrl = 'https://upload-images.jianshu.io/upload_images/13180946-ef950f57f6035d0f.png'></homelist_item>
+<homelist_item></homelist_item>
+<homelist_item></homelist_item>
+<homelist_item imageUrl = 'https://upload-images.jianshu.io/upload_images/13180946-ef950f57f6035d0f.png'></homelist_item>
+<homelist_item></homelist_item>
+<homelist_item imageUrl = 'https://upload-images.jianshu.io/upload_images/13180946-ef950f57f6035d0f.png'></homelist_item>
+<homelist_item></homelist_item>
+<homelist_item></homelist_item>
+<homelist_item></homelist_item>
+</view>

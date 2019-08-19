@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  height: 160rpx;
+}
+
+.titleImage {
+  padding-left: 30rpx;
+  width: 112rpx;
+  height: 112rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.detail {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.subContainer {
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrowImage {
+  position: absolute;
+  right: 20rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.line {
+  position: absolute;
+  background: #f1f1f1;
+  height: 2rpx;
+  width: 720rpx;
+  margin-left: 30rpx;
+  margin-top: 158rpx;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}

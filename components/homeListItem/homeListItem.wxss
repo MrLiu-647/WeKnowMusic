@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftcontainer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 20rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.detail {
+  padding-top:10rpx;
+  font-size: 24rpx;
+  color: #666;
+  /*定义为自适应布局*/
+  display: -webkit-box;
+  word-break: break-all;
+   /*超出文字用省略号代替*/
+  text-overflow: ellipsis; 
+  /*竖直方向的超出和隐藏*/
+  -webkit-box-orient: vertical;
+  /*设定行数为2*/
+  -webkit-line-clamp: 2;
+  /*多出部分隐藏*/
+  overflow: hidden;
+}
+
+.date {
+  font-size: 22rpx;
+  color: #666;
+  padding-top:10rpx;
+}
+
+.rightcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;/*水平，垂直居中*/
+}
+.contentImage {
+  width: 180rpx;
+  height: 180rpx; 
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+.line{
+position: relative;
+background: #F1F1F1;
+height: 2rpx;
+width: 730rpx;
+left: 20rpx;
+top: 2rpx;
+}

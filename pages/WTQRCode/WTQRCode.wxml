@@ -1,0 +1,30 @@
+<!-- <view class='container'>
+  <scroll-view class="scroll-view" scroll-x='true' scroll-into-view="{{toView}}" scroll-with-animation='true' bindscrolltoupper='scrollChange' bindscroll='scrollChange'>
+    <view class='item' wx:for='{{maintitles}}' wx:key='*this'>
+      <view class='scroll-item'>
+        <view class='scroll-item-content'>
+          <view class='imageView'>
+            <image class='imagecontent' src='{{titleImages[index]}}'></image>
+          </view>
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view> -->
+<view class='container'>
+<swiper class='scroll-view'circular='true'>
+  <block wx:for="{{maintitles}}" wx:key = '*this'>
+    <swiper-item class = 'item'>
+       <view class='scroll-item'>
+        <view class='scroll-item-content'>
+          <view class='imageView'>
+            <image class='imagecontent' src='{{titleImages[index]}}'></image>
+          </view>
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+</view>

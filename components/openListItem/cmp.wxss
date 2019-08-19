@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  height: 160rpx;
+}
+
+.titleImage {
+  display: block;
+  margin-left: 30rpx;
+  width: 112rpx;
+  height: 112rpx;
+  /* border-radius: 50%; */
+  /* box-sizing: boder-box不改变突变本身的大小 */
+}
+
+.title {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.detail {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #666;
+   /*定义为自适应布局*/
+  display: -webkit-box;
+  word-break: break-all;
+   /*超出文字用省略号代替*/
+  text-overflow: ellipsis; 
+  /*竖直方向的超出和隐藏*/
+  -webkit-box-orient: vertical;
+  /*设定行数为2*/
+  -webkit-line-clamp: 2;
+  /*多出部分隐藏*/
+  overflow: hidden;
+
+}
+
+.subContainer {
+  padding-left: 20rpx;
+  padding-right: 48rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrowImage {
+  position: absolute;
+  right: 20rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.line {
+  position: absolute;
+  background: #f1f1f1;
+  height: 2rpx;
+  width: 720rpx;
+  box-sizing: border-box;
+  margin-left: 30rpx;
+  margin-top: 158rpx;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}

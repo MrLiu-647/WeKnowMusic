@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/Index/index",
+    "pages/WTHome/WTHome",
+    "pages/WTFind/WTFind",
+    "pages/WTOpen/WTOpen",
+    "pages/WTMore/WTMore",
+    "pages/WTWebView/WTWebView",
+    "pages/WTQRCode/WTQRCode",
+    "pages/WTUpdate/WTUpdate",
+    "pages/WTAbout/WTAbout"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#3CC1FC",
+    "list": [
+      {
+        "pagePath": "pages/WTHome/WTHome",
+        "text": "首页",
+        "iconPath": "/images/tabBar/wt_tab_icon_home_normal.png",
+        "selectedIconPath": "/images/tabBar/wt_tab_icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/WTOpen/WTOpen",
+        "text": "开源",
+        "iconPath": "/images/tabBar/wt_tab_icon_open_normal.png",
+        "selectedIconPath": "/images/tabBar/wt_tab_icon_open_selected.png"
+      },
+      {
+        "pagePath": "pages/WTFind/WTFind",
+        "text": "发现",
+        "iconPath": "/images/tabBar/wt_tab_icon_find_normal.png",
+        "selectedIconPath": "/images/tabBar/wt_tab_icon_find_selected.png"
+      },
+      {
+        "pagePath": "pages/WTMore/WTMore",
+        "text": "更多",
+        "iconPath": "/images/tabBar/wt_tab_icon_more_normal.png",
+        "selectedIconPath": "/images/tabBar/wt_tab_icon_more_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

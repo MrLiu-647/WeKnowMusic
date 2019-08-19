@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  height: 100rpx;
+}
+
+.titleImage {
+  padding-left: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.title {
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.arrowImage {
+  position: absolute;
+  right: 20rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.line{
+position: absolute;
+background:#F1F1F1;
+height: 2rpx;
+width: 720rpx;
+margin-left: 30rpx;
+margin-top: 98rpx
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+}

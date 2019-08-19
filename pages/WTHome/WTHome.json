@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "homelist_item":"/components/homeListItem/homeListItem"
+  }
+}

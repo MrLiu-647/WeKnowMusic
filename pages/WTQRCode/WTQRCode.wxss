@@ -1,0 +1,54 @@
+page {
+  background: #f1f1f1;
+}
+
+.container {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  background: #f1f1f1;
+}
+
+.scroll-view {
+  height: 720rpx;
+  display: flex;
+  flex-direction: row;
+  background: yellow;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.item {
+  display: inline-block;
+  background: #f1f1f1;
+}
+
+.scroll-item {
+  background: #f1f1f1;
+  /* 
+  1.scroll-view 中的需要滑动的元素不可以用 float 浮动； 
+  2.scroll-view 中的包裹需要滑动的元素的大盒子用 display:flex; 是没有作用的；
+  3.scroll-view 中的需要滑动的元素要用 dislay:inline-block; 进行元素的横向编排；
+  4.包裹 scroll-view 的大盒子有明确的宽和加上样式-->  overflow:hidden;white-space:n  owrap; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 750rpx;
+}
+
+.scroll-item-content {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 690rpx;
+  padding-bottom: 20rpx;
+}
+
+.imagecontent {
+  width: 630rpx;
+  height: 630rpx;
+}

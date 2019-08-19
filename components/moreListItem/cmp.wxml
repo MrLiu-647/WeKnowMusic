@@ -1,0 +1,8 @@
+<view class = 'content' catchtap='itemOntap' data-link='{{link}}'data-title='{{title}}'>
+<view class = 'container'>
+<image class='titleImage' src='{{imageSrc}}'mode='aspectFill'></image>
+<text class='title'>{{title}}</text>
+<image class='arrowImage'src='/images/more/wt_icon_arrow.png'></image>
+</view>
+<view class='line'></view>
+</view>

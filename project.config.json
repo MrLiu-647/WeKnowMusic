@@ -1,0 +1,90 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wx0f13f26d81d884da",
+	"projectname": "miniprogam_webtech",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "more",
+					"pathName": "pages/WTMore/WTMore",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "find",
+					"pathName": "pages/WTFind/WTFind",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "open",
+					"pathName": "pages/WTOpen/WTOpen",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "code",
+					"pathName": "pages/WTQRCode/WTQRCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "code1",
+					"pathName": "pages/WTUpdate/WTUpdate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "111",
+					"pathName": "pages/WTAbout/WTAbout",
+					"scene": null
+				}
+			]
+		}
+	}
+}

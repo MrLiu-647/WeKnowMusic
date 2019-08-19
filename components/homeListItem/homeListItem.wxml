@@ -1,0 +1,13 @@
+<view class='container'>
+  <view class='leftcontainer'>
+    <text class='title'>{{title}}</text>
+    <text class='detail'>{{detail}}</text>
+    <text class='date'>{{date}}</text>
+  </view>
+  <view class='rightcontainer'wx:if='{{imageUrl.length > 0}}' >
+    <image class='contentImage' src='{{imageUrl}}'mode='aspectFill'></image>
+  </view>
+ 
+</view>
+ <view class='line'>
+</view>

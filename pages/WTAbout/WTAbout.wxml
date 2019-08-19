@@ -1,0 +1,11 @@
+<view class='container'>
+  <view class='topContainer'>
+    <image class='imageView' src='/images/more/wt_more_logo_app.png'></image>
+    <text class='title1'>歪脖技术</text>
+    <text class='title2'>Developer: Developers of QiShare</text>
+    <text class='title3'>Designer: Quan Cong & Ma Xiaojia</text>
+  </view>
+  <view class='bottomContainer'>
+    <text class='title4'>Copyright © 2019 QiShare. All rights reserved.</text>
+  </view>
+</view>
