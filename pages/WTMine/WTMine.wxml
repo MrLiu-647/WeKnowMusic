@@ -1,0 +1,19 @@
+<view class='more_container'>
+  <view class='more-header'>
+    <image class='more-header-avatar' src='/images/more/wt_more_logo_webtech.png'></image>
+    <text class='more-header-name'>歪脖技术</text>
+
+    <view class='more-header-rightView' bindtap='updateTap'>
+      <text class='more-header-rightView-title'>扫码下载更新</text>
+      <image class='more-header-rightView-qrimage' src='/images/more/wt_more_icon_qrcode.png'></image>
+      <image class='more-header-rightView-image' src='/images/more/wt_more_icon_arrow.png'></image>
+    </view>
+
+  </view>
+
+  <view class='listContainer'>
+    <block wx:for='{{maintitles}}' wx:key="*this">
+      <morelistItem title='{{item}}' imageSrc='{{titleImages[index]}}' link='{{links[index]}}' bind:moreItemTap='moreItemTap'></morelistItem>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#3dc2fc",
+  "usingComponents": {
+    "morelistItem":"/components/moreListItem/cmp"
+  }
+}

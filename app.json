@@ -2,9 +2,8 @@
   "pages": [
     "pages/Index/index",
     "pages/WTHome/WTHome",
-    "pages/WTFind/WTFind",
-    "pages/WTOpen/WTOpen",
-    "pages/WTMore/WTMore",
+    "pages/WTMake/WTMake",
+    "pages/WTMine/WTMine",
     "pages/WTWebView/WTWebView",
     "pages/WTQRCode/WTQRCode",
     "pages/WTUpdate/WTUpdate",
@@ -26,22 +25,16 @@
         "selectedIconPath": "/images/tabBar/wt_tab_icon_home_selected.png"
       },
       {
-        "pagePath": "pages/WTOpen/WTOpen",
-        "text": "开源",
+        "pagePath": "pages/WTMake/WTMake",
+        "text": "制作",
         "iconPath": "/images/tabBar/wt_tab_icon_open_normal.png",
         "selectedIconPath": "/images/tabBar/wt_tab_icon_open_selected.png"
       },
       {
-        "pagePath": "pages/WTFind/WTFind",
-        "text": "发现",
+        "pagePath": "pages/WTMine/WTMine",
+        "text": "我的",
         "iconPath": "/images/tabBar/wt_tab_icon_find_normal.png",
         "selectedIconPath": "/images/tabBar/wt_tab_icon_find_selected.png"
-      },
-      {
-        "pagePath": "pages/WTMore/WTMore",
-        "text": "更多",
-        "iconPath": "/images/tabBar/wt_tab_icon_more_normal.png",
-        "selectedIconPath": "/images/tabBar/wt_tab_icon_more_selected.png"
       }
     ]
   },
