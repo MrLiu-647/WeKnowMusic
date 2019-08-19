@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    menuItems: ["开心", "伤心", "彷徨", "激动","心碎"],
+    menuItems: ["开心", "伤心", "努力", "彷徨", "激动", "心碎", "感谢"],
     menuItemId:"item0",
     currentIndex:0,
     string:"0"
