@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/Index/index",
+    "pages/index/index",
     "pages/WTHome/WTHome",
     "pages/WTMake/WTMake",
     "pages/WTMine/WTMine",

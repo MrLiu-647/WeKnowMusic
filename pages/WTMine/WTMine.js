@@ -1,10 +1,15 @@
 // pages/WTMore/WTMore.js
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     maintitles: ['前端星计划','技术嘉年华','技术训练营','培训课程','技术招聘','公众号','关于'],
     titleImages: ['/images/more/wt_more_icon_star.png', '/images/more/wt_more_icon_skill.png', '/images/more/wt_more_icon_train.png', '/images/more/wt_more_icon_class.png', '/images/more/wt_more_icon_recruit.png', '/images/more/wt_more_icon_weixin.png', '/images/more/wt_more_icon_about.png'],
     links: ['http://study.qiyun.360.cn', 'https://code.360.cn/activity/detail?id=8', 'https://code.360.cn/activity/detail?id=6', 'https://code.360.cn/course','http://hr.360.cn/list','','']
@@ -14,7 +19,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    if (app.globalData.userInfo) {
+      console.log("111")
+      that.setUserInfo(app.globalData.userInfo);
+    } else if (that.data.canIUse) {
+      console.log("222")
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        that.setUserInfo(res.userInfo);
+      }
+    } else {
+      console.log("333")
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          that.setUserInfo(res.userInfo);
+        }
+      })
+    }
   },
 
   /**
@@ -65,8 +89,8 @@ Page({
   onShareAppMessage: function () {
 
   },
+
   moreItemTap:function(e){
-    /** encodeURIComponent编码 decodeURIComponent 解码 防止link中带有？字样*/
     var link = encodeURIComponent(e.detail.link);
     var title = e.detail.title;
     console.log(link);
@@ -87,9 +111,23 @@ Page({
 
     }
   },
-  updateTap:function(e){
+  /*updateTap:function(e){
     wx.navigateTo({
       url: `/pages/WTUpdate/WTUpdate?titleStr=${'二维码'}`
     })
+  },*/
+
+  getUserInfo: function (e) {
+    this.setUserInfo(e.detail.userInfo);
+  },
+
+  setUserInfo: function (userInfo) {
+    if (userInfo != null) {
+      app.globalData.userInfo = userInfo
+      this.setData({
+        userInfo: userInfo,
+        hasUserInfo: true
+      })
+    }
   }
 })

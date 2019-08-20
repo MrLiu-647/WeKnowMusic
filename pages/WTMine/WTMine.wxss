@@ -13,7 +13,17 @@
   background: #f1f1f1;
 }
 
-.more-header {
+.head-height {
+  height: 240rpx;
+}
+
+.login-button {
+  opacity: 0;
+  width: 100%;
+  position: fixed;
+}
+
+.userinfo {
   background-color: #3dc2fc;
   display: flex;
   flex-direction: row;
@@ -22,56 +32,16 @@
   height: 204rpx;
 }
 
-.more-header-avatar {
-  width: 124rpx;
-  height: 124rpx;
-  padding-left: 30rpx;
-  padding-top: 40rpx;
-  padding-bottom: 40rpx;
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 30rpx;
+  border-radius: 50%;
 }
 
-.more-header-name {
-  position: relative;
-  color: white;
-  font-size: 38rpx;
-  left: 20rpx;
-}
-.more-header-rightView {
-  position: absolute;
-  right: 0rpx;
-  width: 280rpx; /*fit-content*/
-  height: 60rpx;
-  white-space: nowrap; /*后面再查*/
-  background-color: rgba(51, 47, 47, 0.2);
-  border-top-left-radius: 30rpx 30rpx;
-  border-bottom-left-radius: 30rpx 30rpx;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.more-header-rightView-title {
-  position: absolute;
-  font-size: 24rpx;
-  color: white;
-  /* height: 28rpx; */
-  right: 100rpx;
-}
-
-.more-header-rightView-qrimage {
-  position: absolute;
-  right: 58rpx;
-  /* top: 7rpx; */
-  width: 28rpx;
-  height: 28rpx;
-}
-
-.more-header-rightView-image {
-  position: absolute;
-  right: 20rpx;
-  /* top: 7rpx; */
-  width: 28rpx;
-  height: 28rpx;
+.userinfo-nickname {
+  color: #333333;
+  font-size: 42rpx;
 }
 
 .listContainer {
