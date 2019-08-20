@@ -4,13 +4,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    title:{
-      type: String,
-      value: 'iOS 中的界面旋转'
-    },
-    detail:{
+    text:{
      type:String,
-      value:'级别： ★☆☆☆☆标签：「iOS」「界面旋转 」「iOS 中的界面旋转」作者： dac_1033审校： QiShare团队 最近所接触的项目中有...'
+      value: '蝴蝶眨几次眼睛才学会飞行。夜空洒满了星星，但几颗会落地。我飞行，但你坠落之际。很靠近，还听见呼吸。对不起，我却没捉紧你。你不知道我为什麽离开你。我坚持不能说放任你哭泣。你的泪滴像倾盆大雨，碎了满地。在心里清晰。你不知道我为什麽狠下心。盘旋在你看不见的高空里。多的是，你不知道的事。'
     },
     date:{
       type:String,
@@ -19,8 +15,15 @@ Component({
     imageUrl:{
       type:String,
       value:''
+    },
+    userName:{
+      type: String,
+      value: '647'
+    },
+    userImageUrl:{
+      type: String,
+      value: ''
     }
-
   },
 
   /**
@@ -35,5 +38,5 @@ Component({
    */
   methods: {
 
-  }
+  },
 })

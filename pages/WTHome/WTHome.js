@@ -3,7 +3,7 @@ var WxParse = require('../../lib/wxParse.js');
 // pages/WTHome/WTHome.js
 
 Page({
-
+  userInfo: {},
   /**
    * 页面的初始数据
    */
@@ -27,7 +27,8 @@ Page({
   onReady: function () {
     var that = this;
     wx.request({
-      url: 'https://weekly.75team.com',//奇舞周刊
+      url:'http://10.216.0.152/api/test',
+      // url: 'https://weekly.75team.com',//奇舞周刊
       // url:'https://blog.csdn.net/ZVAyIVqt0UFji',//csdn
       // url:'https://www.zcfy.cc',//众城翻译数据可以看到
       // url:'https://testerhome.com/columns/Qtest',//Qtest不OK
@@ -36,8 +37,8 @@ Page({
         'Content-Type':'application/json;charset=utf-8'
       },
       success: function (res) {
-        var article = res.data;
-        // console.log (String(res.data));
+        // var article = res.data;
+        console.log (String(res.data));
         // WxParse.wxParse('article', 'html', article, that, 5);
       }
     })

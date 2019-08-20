@@ -1,22 +1,39 @@
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.leftcontainer {
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5rpx;
+}
+
+.userImage {
+  display: flex;
+  width: 60rpx;
+  height: 60rpx; 
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+  box-sizing: border-box;
+}
+
+.userName {
+  display: flex;
+  font-size: 32rpx;
+  color: #333;
+  padding-left: 20rpx;
+}
+
+.centerContainer {
   display: flex;
   flex-direction: column;
   align-self: center;
-  padding: 20rpx;
+  padding-left: 80rpx;
+  padding-bottom: 20rpx;
 }
 
-.title {
-  font-size: 32rpx;
-  color: #333;
-}
-
-.detail {
-  padding-top:10rpx;
+.text {
   font-size: 24rpx;
   color: #666;
   /*定义为自适应布局*/
@@ -27,7 +44,7 @@
   /*竖直方向的超出和隐藏*/
   -webkit-box-orient: vertical;
   /*设定行数为2*/
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 50;
   /*多出部分隐藏*/
   overflow: hidden;
 }
@@ -35,26 +52,30 @@
 .date {
   font-size: 22rpx;
   color: #666;
-  padding-top:10rpx;
+  text-align: right;
+  padding-right:20rpx;
 }
 
-.rightcontainer {
+.bottomContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;/*水平，垂直居中*/
+  flex-direction: row;
+  padding-left: 50rpx;
+  align-items: left;
+  /* justify-content: center;水平，垂直居中 */
 }
+
 .contentImage {
-  width: 180rpx;
-  height: 180rpx; 
+  width: 200rpx;
+  height: 200rpx; 
   margin-right: 20rpx;
   box-sizing: border-box;
 }
+
 .line{
-position: relative;
-background: #F1F1F1;
-height: 2rpx;
-width: 730rpx;
-left: 20rpx;
-top: 2rpx;
+  display: table-column;
+  background: #333;
+  height: 15rpx;
+  width: 750rpx;
+  margin-left: 0rpx;
+  margin-top: 2rpx;
 }

@@ -1,13 +1,20 @@
 <view class='container'>
-  <view class='leftcontainer'>
-    <text class='title'>{{title}}</text>
-    <text class='detail'>{{detail}}</text>
-    <text class='date'>{{date}}</text>
+
+  <view class='topContainer'>
+    <image class='userImage' src="{{imageUrl}}" mode='aspectFill'></image>
+    <text class='userName'>{{userName}}</text>
   </view>
-  <view class='rightcontainer'wx:if='{{imageUrl.length > 0}}' >
+
+  <view class='centerContainer'>
+    <text class='text'>{{text}}</text>
+  </view>
+
+  <view class='bottomContainer' wx:if='{{imageUrl.length > 0}}' >
+    <image class='contentImage' src='{{imageUrl}}'mode='aspectFill'></image>
     <image class='contentImage' src='{{imageUrl}}'mode='aspectFill'></image>
   </view>
- 
+  <text class='date'>{{date}}</text>
 </view>
- <view class='line'>
+
+<view class='line'>  
 </view>
