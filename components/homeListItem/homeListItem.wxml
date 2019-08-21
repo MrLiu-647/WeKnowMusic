@@ -1,10 +1,15 @@
 <view class='container'>
 
   <view class='topContainer'>
-    <image class='userImage' src="{{avatar}}" mode='aspectFill'></image>
-    <text class='userName'>{{nickname}}</text>
-    <text class='singer'>歌手：{{singer}}</text>
-    <text class='song_name'>—— {{song_name}}</text>
+    <view class="topLeftContainer">
+      <image class='userImage' src="{{avatar}}" mode='aspectFill'></image>
+      <text class='userName'>{{nickname}}</text>
+    </view>
+    <view class="topRightContainer">
+      <text class='singer'>歌手：周杰伦</text>
+      <text class='song_name'>—— 晴天</text>
+      <image class='playImage' src="/images/frame/play.png"></image>
+    </view>
   </view>
 
   <view class='centerContainer'>

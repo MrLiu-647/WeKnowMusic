@@ -5,11 +5,18 @@
 
 .topContainer {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  width: 750rpx;
   margin-bottom: 5rpx;
-  margin-right: 10rpx;
 }
-
+.topLeftContainer {
+  display: flex;
+  flex-direction: row;
+}
+.topRightContainer {
+  display: flex;
+  flex-direction: row;
+}
 .userImage {
   display: flex;
   width: 60rpx;
@@ -41,6 +48,15 @@
   padding-left: 10rpx;
   font-size: 22rpx;
   color: #333;
+}
+
+.playImage {
+  display: flex;
+  width: 40rpx;
+  height: 40rpx;
+  padding-left: 10rpx;
+  padding-right: 20rpx;
+  margin-top: 30rpx;
 }
 
 .centerContainer {
