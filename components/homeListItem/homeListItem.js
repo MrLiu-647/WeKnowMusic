@@ -1,3 +1,6 @@
+//获取应用实例
+const app = getApp()
+
 // components/homeListItem/homeListItem.js
 Component({
   /**
@@ -20,9 +23,13 @@ Component({
       type: String,
       value: '647'
     },
-    userImageUrl:{
+    userImageUrl: {
       type: String,
       value: ''
+    },
+    data: {
+      type: Object,
+      value: {}
     }
   },
 
@@ -39,4 +46,9 @@ Component({
   methods: {
 
   },
+  
+  onLoad() {
+    console.log("111111111111111")
+    // console.log(this.properties.data)
+  }
 })

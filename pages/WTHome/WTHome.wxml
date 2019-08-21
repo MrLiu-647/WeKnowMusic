@@ -6,15 +6,6 @@
 </scroll-view>
 
 
-<view class='listContainer'>
-
-<homelist_item imageUrl = 'https://upload-images.jianshu.io/upload_images/13180946-ef950f57f6035d0f.png'></homelist_item>
-<homelist_item></homelist_item>
-<homelist_item></homelist_item>
-<homelist_item imageUrl = 'https://upload-images.jianshu.io/upload_images/13180946-ef950f57f6035d0f.png'></homelist_item>
-<homelist_item></homelist_item>
-<homelist_item imageUrl = 'https://upload-images.jianshu.io/upload_images/13180946-ef950f57f6035d0f.png'></homelist_item>
-<homelist_item></homelist_item>
-<homelist_item></homelist_item>
-<homelist_item></homelist_item>
+<view class='listContainer' wx:for="{{arrayList}}">
+  <homelist_item data="{{arrayList.index}}"></homelist_item>
 </view>

@@ -1,6 +1,4 @@
 {
-  "navigationBarTitleText": "开源",
-  "usingComponents": {
-    "openlist-item": "/components/openListItem/cmp"
-  }
+  "navigationBarTitleText": "首页",
+  "navigationBarBackgroundColor": "#ffffff"
 }

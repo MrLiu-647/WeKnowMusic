@@ -8,10 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    menuItems: ["开心", "伤心", "努力", "彷徨", "激动", "心碎", "感谢"],
+    menuItems: ["周杰伦", "林俊杰", "王力宏", "李荣浩", "陈奕迅", "毛不易", "五月天", "梁博", "邓紫棋", "许嵩", "汪苏泷", "王菲"],
     menuItemId:"item0",
     currentIndex:0,
-    string:"0"
+    string:"0",
+    arrayList:[]
   },
 
   /**
@@ -27,18 +28,16 @@ Page({
   onReady: function () {
     var that = this;
     wx.request({
-      url:'http://10.216.0.152/api/test',
-      // url: 'https://weekly.75team.com',//奇舞周刊
-      // url:'https://blog.csdn.net/ZVAyIVqt0UFji',//csdn
-      // url:'https://www.zcfy.cc',//众城翻译数据可以看到
-      // url:'https://testerhome.com/columns/Qtest',//Qtest不OK
-      // url:'https://www.jianshu.com/u/3db23baa08c7',//qishare
+      url:'http://10.216.0.152/api/list',
+      method: 'GET',
       headers: {
         'Content-Type':'application/json;charset=utf-8'
       },
       success: function (res) {
-        // var article = res.data;
-        console.log (String(res.data));
+        that.setData({
+          arrayList: res.data,
+        })
+        // console.log(that.data.arrayList)
         // WxParse.wxParse('article', 'html', article, that, 5);
       }
     })

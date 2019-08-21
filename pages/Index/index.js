@@ -13,7 +13,6 @@ Page({
     // 查看是否授权
     wx.getSetting({
       success: function (res) {
-        
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             lang: "zh_CN",
@@ -26,7 +25,7 @@ Page({
               })
               wx.login({
                 success: res => {
-                  console.log(res)
+                  // console.log(res)
                   let data = {
                     code: res.code,
                     nickname: response.userInfo.nickName,
@@ -37,7 +36,6 @@ Page({
                     gender: response.userInfo.gender ? response.userInfo.gender : '',
                     language: response.userInfo.language ? response.userInfo.language : '',
                   }
-                  app.globalData.userInfo = data;
                   wx.request({
                     url: 'http://10.216.0.152/api/login',
                     method: 'POST',
@@ -46,14 +44,12 @@ Page({
                     //   'Content-Type': 'application/x-www-form-urlencoded'
                     // },
                     success: function (res) {
-                      console.log(res)
                       if (res.statusCode != '200') {
                         return false;
                       }
-                      console.log()
                       wx.setStorageSync('access_token', res.data.access_token)
                       wx.setStorageSync('UserData', res.data.data ? res.data.data : '')
-                      console.log(wx.getStorageSync('UserData'))
+                      // console.log(wx.getStorageSync('UserData'))
                     },
                     
                     fail: function (e) {
@@ -87,7 +83,7 @@ Page({
       var that = this;
       // 获取到用户的信息了，打印到控制台上看下
       console.log("用户的信息如下：");
-      console.log(e.detail.userInfo);
+      // console.log(e.detail.userInfo);
       app.globalData.userInfo = e.detail.userInfo;
       //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
       that.setData({
