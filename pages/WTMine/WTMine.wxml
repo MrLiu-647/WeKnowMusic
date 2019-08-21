@@ -15,9 +15,9 @@
     </view>
   </block>
 
-  <view class='listContainer'>
+  <scroll-view class='listContainer'style="height:{{windowHeight}}" scroll-y bindscrolltolower="lower">
     <block wx:for='{{maintitles}}' wx:key="*this">
-      <morelistItem title='{{item}}' imageSrc='{{titleImages[index]}}' link='{{links[index]}}' bind:moreItemTap='moreItemTap'></morelistItem>
+      <morelistItem title='{{item}}' imageSrc='{{titleImages[index]}}' secondImageSrc='{{secondTitleImages[index]}}' link='{{links[index]}}' date='{{dates[index]}}' bind:moreItemTap='moreItemTap'></morelistItem>
     </block>
-  </view>
+  </scroll-view>
 </view>

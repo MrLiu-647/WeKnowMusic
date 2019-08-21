@@ -7,12 +7,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    response: {},
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    maintitles: ['前端星计划','技术嘉年华','技术训练营','培训课程','技术招聘','公众号','关于'],
+    maintitles: ['蝴蝶眨几次眼睛才学会飞行。夜空洒满了星星，但几颗会落地。我飞行，但你坠落之际。很靠近，还听见呼吸。对不起，我却没捉紧你。你不知道我为什麽离开你。我坚持不能说放任你哭泣。你的泪滴像倾盆大雨，碎了满地。在心里清晰。你不知道我为什麽狠下心。盘旋在你看不见的高空里。多的是，你不知道的事。', '012345678910', 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest', 'abcdefgabcdefgabcdefgabcdefg', '000000000000000000000000000000000000000000000000000000000000000000000000','测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试','关于'],
     titleImages: ['/images/more/wt_more_icon_star.png', '/images/more/wt_more_icon_skill.png', '/images/more/wt_more_icon_train.png', '/images/more/wt_more_icon_class.png', '/images/more/wt_more_icon_recruit.png', '/images/more/wt_more_icon_weixin.png', '/images/more/wt_more_icon_about.png'],
-    links: ['http://study.qiyun.360.cn', 'https://code.360.cn/activity/detail?id=8', 'https://code.360.cn/activity/detail?id=6', 'https://code.360.cn/course','http://hr.360.cn/list','','']
+    secondTitleImages: ['/images/more/wt_more_icon_skill.png', '/images/more/wt_more_icon_star.png', '/images/more/wt_more_icon_class.png', '/images/more/wt_more_icon_train.png', '/images/more/wt_more_icon_weixin.png', '/images/more/wt_more_icon_about.png', '/images/more/wt_more_icon_recruit.png'],
+    links: ['http://study.qiyun.360.cn', 'https://code.360.cn/activity/detail?id=8', 'https://code.360.cn/activity/detail?id=6', 'https://code.360.cn/course','http://hr.360.cn/list','',''],
+    // dates: ['2019-06-13 77:77:77', '2019-06-13 66:66:66', '2019-06-13 55:55:55', '2019-06-13 44:44:44', '2019-06-13 33:33:33', '2019-06-13 22:22:22', '2019-06-13 11:11:11']
+    dates: {}
   },
 
   /**
@@ -21,17 +25,14 @@ Page({
   onLoad: function (options) {
     var that = this;
     if (app.globalData.userInfo) {
-      console.log("111")
       that.setUserInfo(app.globalData.userInfo);
     } else if (that.data.canIUse) {
-      console.log("222")
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
         that.setUserInfo(res.userInfo);
       }
     } else {
-      console.log("333")
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
@@ -39,6 +40,42 @@ Page({
         }
       })
     }
+
+    wx.getSystemInfo({
+      success: function(res) {
+        that.setData({
+          windowHeight: res.windowHeight + "px",
+        })
+      },
+    })
+
+    wx.request({
+      url: 'http://10.216.0.152/api/record/list',
+      data: { id: wx.getStorageSync('UserData').weapp_openid},
+      method: 'POST',
+      // header: {
+        // 'content-type': 'application/json'
+      // },
+      success: function(res) {
+        if (res.statusCode != 200) {
+          return false;
+        }
+        // todo
+        console.log(res.data)
+        response: res.data
+      },
+      fail: function() {
+        wx.showToast({
+          title: '个人中心请求服务器错误',
+          duration: 2000
+        });
+      }
+    })
+
+    for (var i = 0; i < response.length; i++) {
+      dates.push(response(i).updated_at.date);
+    }
+    
   },
 
   /**
@@ -129,5 +166,20 @@ Page({
         hasUserInfo: true
       })
     }
+  },
+
+  lower: function(e) {
+    if (this.data.loadmoreData) {
+      this.setData({
+        loadmore: 'true',
+      })
+      this.loadmorenav();
+    } else {
+      this.setData({
+        loadmore: 'false',
+      })
+    }
   }
+
+
 })

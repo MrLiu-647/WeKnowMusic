@@ -1,37 +1,59 @@
-.container {
+.container { 
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   background: white;
-  height: 100rpx;
-}
-
-.titleImage {
-  padding-left: 30rpx;
-  width: 40rpx;
-  height: 40rpx;
 }
 
 .title {
   padding-left: 20rpx;
   font-size: 30rpx;
   color: #333;
+
+  /*定义为自适应布局*/
+  display: -webkit-box;
+  word-break: break-all;
+   /*超出文字用省略号代替*/
+  text-overflow: ellipsis; 
+  /*竖直方向的超出和隐藏*/
+  -webkit-box-orient: vertical;
+  /*设定行数为3*/
+  -webkit-line-clamp: 3;
+  /*多出部分隐藏*/
+  overflow: hidden;
 }
 
-.arrowImage {
-  position: absolute;
-  right: 20rpx;
-  width: 28rpx;
-  height: 28rpx;
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  padding-left: 30rpx;
+  align-items: left;
+  /* justify-content: center;水平，垂直居中 */
+}
+.titleImage {
+  padding-left: 30rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.secondTitleImage {
+  padding-left: 30rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.date {
+  font-size: 25rpx;
+  color: #666;
+  text-align: right;
+  padding-right:20rpx;
 }
 
 .line{
-position: absolute;
+position: flex;
 background:#F1F1F1;
 height: 2rpx;
 width: 720rpx;
 margin-left: 30rpx;
-margin-top: 98rpx
+margin-top: 20rpx
 }
 
 .content{
