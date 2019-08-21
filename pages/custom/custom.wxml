@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="mask"></view>
+  <view class="inner">
+    <form bindsubmit="save">
+      <view class="item">
+        <text class="key">复制分享链接到下框</text>
+      </view>
+      <!-- best wishes -->
+      <view class="item best-wishes">
+        <textarea bindinput="bindChangeText" class="textarea" name="input_share" value="{{wishes}}" id="best-wishes"></textarea>
+        <text class="word-tips">50字以内</text>
+      </view>
+      <!-- controls -->
+      <view class="btns">
+        <button form-type="submit" class="save-btn" hover-class="hover-btn">保存</button>
+      </view>
+    </form>
+  </view>
+</view>

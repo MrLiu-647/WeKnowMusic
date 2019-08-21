@@ -61,7 +61,7 @@
   width:750rpx;
   text-align: center;
   position: relative;
-  background-color: #cc9999;
+  background-color: #fff;
   overflow: hidden;
 }
 .noImageBox{
@@ -503,7 +503,7 @@ background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www
 .splice-page{
   height:100%;
   overflow: hidden;
-  background-color: #cc9999;
+  background-color: #aaa;
 }
 .saveButton{
   position:absolute;

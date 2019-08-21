@@ -37,7 +37,7 @@ Page({
     // texted:false,
     inputFocus: false,
     page: '',
-    imageNotChoosed: false,
+  
     imgViewHeight: 0,
     longImageSrcs: [],
     totalHeight: 0,
@@ -54,29 +54,33 @@ Page({
     photoHeight: 0,
     photoLeft: 0,
     photoTop: 0,
-    readuSave: false
+    readuSave: false,
+    song_name: null,
+    singer: null,
+    album_cover: null,
+    lyric: null,
+    hidden: false,
+    checkboxItems: null,
+    hidden: false,
+    changed_detail: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function (options) {
     var self = this
-    // self.device = wx.getSystemInfoSync()
     self.device = app.globalData.myDevice
     self.deviceRatio = self.device.windowWidth / 750
     self.imgViewHeight = self.device.windowHeight - 160 * self.deviceRatio
     self.setData({
-      // page: option.choosed,
-      // longImageSrcs: [],
+
       imgViewHeight: self.imgViewHeight,
       // tempCanvasHeight: self.imgViewHeight,
       page: 'mainPage'
     })
-    chooseImage(self)
   },
-
-
+  
   addImages() {
     var self = this
     wx.chooseImage({
@@ -125,13 +129,9 @@ Page({
 
   //拼相框窗口
   addFrame() {
-
     var self = this
-    this.setData({
-      isFrameChoose: true,
-      // page: 'photoFrame'
-      //page: option.choosed,
-    })
+    loadImgOnImage(self)
+ 
   },
   chooseFrame(e) {
     var self = this
@@ -566,6 +566,14 @@ Page({
       page: 'textPage'
     })
   },
+  //添加文字
+  tolyricPage() {
+    var self = this
+    loadImgOnImage(self)
+    self.setData({
+      page: 'textlyricPage'
+    })
+  },
   focusInput() {
     this.setData({
       inputFocus: !this.data.inputFocus,
@@ -579,6 +587,16 @@ Page({
     }
     this.setData({
       allText: allText
+    })
+  },
+  inputLyric(e) {
+    var allText = this.data.allText
+    allText.someText = e.detail.value
+    if (allText.someText.length == 0) {
+      allText.someText = "点击输入文字"
+    }
+    this.setData({
+      allText: app.globalData.song_name
     })
   },
   textMoveStart(e) {
@@ -615,13 +633,38 @@ Page({
     var allText = {}
     allText = {
       idx: allText.length - 1,
-      someText: "点击输入文字",
+      someText: "点击添加心情",
       fontColor: this.fontColor ? this.fontColor : 'rgba(20,20,20,0.8)',
       fontSize: this.fontSize ? this.fontSize : 14,
       fontStyle: 'normal',
       fontWeight: 'normal',
       textL: (750 - 200) * this.deviceRatio / 2,
       textT: this.imgViewHeight / 2 - this.scaleHeight / 2 + 20,
+      isTextActive: true,
+    }
+    this.setData({
+      allText: allText,
+      isChooseFontSize: false,
+      isChooseFontColor: false,
+      isChooseFontPattern: false
+    })
+  },
+  setlyricText() {
+    console.log("appGlobaldatasongname",app.globalData.song_name)
+    console.log("appGlobaldatasinger",app.globalData.singer)
+    console.log("appGlobaldataalbumcover",app.globalData.album_cover)
+    console.log("appGlobaldataalbumchecked", app.globalData.checked)
+    var allText = {}
+  
+    allText = {
+      idx: allText.length - 1,
+      someText: app.globalData.song_name + "\n" + app.globalData.singer + "\n" + app.globalData.checked,
+      fontColorwrfwrr: this.fontColor ? this.fontColor : 'rgba(20,20,20,0.8)',
+      fontSize: this.fontSize ? this.fontSize : 24,
+      fontStyle: 'normal',
+      fontWeight: 'normal',
+      textL: (750 - 20) * this.deviceRatio / 2,
+      textT: this.imgViewHeight  - this.scaleHeight / 2 + 20,
       isTextActive: true,
     }
     this.setData({

@@ -38,5 +38,9 @@ App({
   globalData: {
     userInfo: null,
     myDevice: null,
+    song_name: null,
+    singer: null,
+    checked: null,
+    album_cover: null
   }
 })

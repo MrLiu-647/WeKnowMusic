@@ -35,6 +35,12 @@
     <text wx:if="{{allText.isTextActive}}" bindtap="{{allText.isTextActive?'focusInput':null}}" bindtouchstart="{{allText.isTextActive?'textMoveStart':null}}" bindtouchmove="{{allText.isTextActive?'textMove':null}}"class="active-text" style="left:{{allText.textL}}px;top:{{allText.textT}}px;font-size:{{allText.fontSize}}px;color:{{allText.fontColor}};font-style:{{allText.fontStyle}};font-weight:{{allText.fontWeight}}">{{allText.someText}}</text> 
     <input focus="{{inputFocus}}"confirm-type="done" bindinput="inputText" style="position:absolute;left:-9999px;"></input>
   </view>
+<!-- 添加歌词 -->
+  <view class="imageView" wx:if="{{page==='textlyricPage'}}" style="height:{{imgViewHeight}}px">
+    <image src="{{tempImageSrc}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px" disable-scroll="true"></image>
+    <text wx:if="{{allText.isTextActive}}" bindtouchstart="{{allText.isTextActive?'textMoveStart':null}}" bindtouchmove="{{allText.isTextActive?'textMove':null}}"class="active-text" style="left:{{allText.textL}}px;top:{{allText.textT}}px;font-size:{{allText.fontSize}}px;color:{{allText.fontColor}};font-style:{{allText.fontStyle}};font-weight:{{allText.fontWeight}}">{{allText.someText}}</text> 
+    <input focus="{{inputFocus}}"confirm-type="done" bindinput="inputLyric" style="position:absolute;left:-9999px;"></input>
+  </view>
   <!-- 涂鸦页面 -->
   <view class="imageView" wx:if="{{page==='doodlePage'}}" style="height:{{imgViewHeight}}px">
      <image src="{{tempImageSrc}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px" disable-scroll="true"></image> 
@@ -46,8 +52,7 @@
     <view bindtap='toCropPage'><text class="icon-cutter"></text><text class="text">裁剪</text></view>
     <view bindtap='toTextPage'><text class="icon-text"></text><text class="text">添加心情</text></view>
     <view bindtap='toDoodlePage'><text class="icon-pen"></text><text class="text">涂鸦</text></view>
-    <view bindtap='addFrame'><text class="icon-frame"></text><text class="text">选择相框</text></view>
-
+    <view bindtap='tolyricPage'><text class="icon-frame"></text><text class="text">添加歌词</text></view>
   </view>
   <!-- 裁剪页面-底部 -->
   <view class="toolbar-bottom" wx:if="{{page==='cropPage'}}">
@@ -91,6 +96,28 @@
       <view bindtap='chooseFontPattern'><text class="icon-style"></text><text class="text">样式</text></view>
     </view>
   </view>
+   
+  <!-- 添加文字页面-底部 -->
+  <view wx:if="{{page==='textlyricPage'}}">
+    <view wx:if="{{isChooseFontSize}}" class="toolbar-top toolbar-width">
+      <view class="slider-box"><slider bindchange="fontsizeSliderChange" min="8" max="26" value="14" show-value></slider></view>
+    </view>
+    <view wx:if="{{isChooseFontColor}}" class="toolbar-top">
+      <view class="color-box"><view wx:for="{{allColor}}" class="color-point" data-selected="{{item}}"style="background:{{item}}" bindtap='fontColorChange'></view></view>
+    </view>
+    <view wx:if="{{isChooseFontPattern}}" class="toolbar-top toolbar-font-style">
+      <view><text>斜体 : </text><switch bindchange="fontStyleChange"/></view>
+      <view><text>加粗 : </text><switch bindchange="fontWeightChange"/></view>
+    </view>
+    <view class="toolbar-bottom">
+      <view bindtap='textToMainPage'><text class="icon-back"></text><text class="text">主菜单</text></view>
+      <!-- <view bindtap="{{isTextEdit?null:'setlyricText'}}"><text class="icon-add"></text><text class="text">添加</text></view> -->
+      <view bindtap="{{'setlyricText'}}"><text class="icon-add"></text><text class="text">添加</text></view>
+      <view bindtap='chooseFontsize'><text class="icon-size"></text><text class="text">大小</text></view>
+      <view bindtap='chooseFontColor'><text class="icon-color"></text><text class="text">颜色</text></view>
+      <view bindtap='chooseFontPattern'><text class="icon-style"></text><text class="text">样式</text></view>
+    </view>
+  </view>
   <!-- 裁剪和添加文字时调出的确认条 -->
   <view class="confirm-bar1" wx:if="{{isCroper||allText.isTextActive}}">
     <text class="icon-cross" bindtap="{{isCroper?'cancelCrop':'cancelAddText'}}"></text>
@@ -115,14 +142,9 @@
     <image class="photo" src="{{photoSrc}}" style="width:{{photoWidth}}px;height:{{photoHeight}}px;top:{{photoTop}}px;left:{{photoLeft}}px" disable-scroll="true"></image>
   </view>
 
-  <!-- 相框选择窗口 -->
-  <view class="toolbar-bottom" wx:if="{{isFrameChoose}}">
-    <view class="farmeChoose-top"><text class="farmeChoose-top-left">选择相框</text><text class="farmeChoose-top-right" bindtap='closeFrameChoose'></text></view>
-    <scroll-view  scroll-y>
-      <view wx:for="{{frameSrcs}}" wx:key="*this" data-src="{{item.src}}" class="frameBox" bindtap='chooseFrame'>
-        <image src="{{'../../image/frame/'+item.src}}" mode="aspectFit"></image><text>{{item.title}}</text>
-      </view>
-    </scroll-view>
-  </view>
+<!-- 相框选择窗口 -->
+<view class="toolbar-bottom" wx:if="{{isFrameChoose}}">
+
+</view>
 </view>
 
