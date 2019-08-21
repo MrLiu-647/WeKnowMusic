@@ -3,19 +3,27 @@ Component({
   /**
    * 组件的属性列表
    */
-  properties: {
-   title:{
-     type:String,
-     value:'前端星计划'
-   },
-   imageSrc:{
-     type: String,
-     value: ''
-   },
-   link:{
-     type:String,
-     value:''
-   }
+  properties: { 
+    title:{
+      type:String,
+      value:'分享内容'
+    },
+    imageSrc:{
+      type: String,
+      value: ''
+    },
+    secondImageSrc: {
+      type: String,
+      value: ''
+    },
+    link:{
+      type:String,
+      value:''
+    },
+    date: {
+      type: String,
+      value: '时间'
+    },
 
   },
 

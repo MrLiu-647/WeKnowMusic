@@ -29,7 +29,7 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
-  height: 204rpx;
+  height: 250rpx;
 }
 
 .userinfo-avatar {
@@ -41,7 +41,7 @@
 
 .userinfo-nickname {
   color: #333333;
-  font-size: 42rpx;
+  font-size: 40rpx;
 }
 
 .listContainer {
