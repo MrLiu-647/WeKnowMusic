@@ -2,9 +2,9 @@
 <view class = 'container'>
   <text class='title'>{{title}}</text>
 
-  <view class='imageContainer' >
+  <view class='imageAndLyric' >
     <image class='titleImage' src='{{imageSrc}}'mode='aspectFill'></image>
-    <image class='secondTitleImage' src='{{secondImageSrc}}'mode='aspectFill'></image>
+    <text class='lyric'>{{lyric}}</text>
   </view>
   <text class='date'>{{date}}</text>
 </view>

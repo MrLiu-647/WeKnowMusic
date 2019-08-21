@@ -12,13 +12,13 @@ Component({
       type: String,
       value: ''
     },
-    secondImageSrc: {
-      type: String,
-      value: ''
-    },
     link:{
       type:String,
       value:''
+    },
+    lyric: {
+      type: String,
+      value: ''
     },
     date: {
       type: String,
