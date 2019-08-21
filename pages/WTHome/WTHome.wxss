@@ -10,12 +10,14 @@
   top: 0;
 	z-index: 3;
 }
+
 .listContainer {
   display: flex;
   flex-direction: column;
   align-content: center;
   margin-top: 92rpx;
 }
+
 /* 正常状态下的颜色必须在前面 */
 .type {
     font-size: 28rpx;
@@ -26,6 +28,7 @@
     align-items: center;
     margin-top: 20rpx;
 }
+
 .active {
     color:#3cc1fc;
     border-bottom: 8rpx solid  #3cc1fc;

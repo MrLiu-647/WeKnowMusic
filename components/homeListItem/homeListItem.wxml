@@ -1,7 +1,7 @@
 <view class='container'>
 
   <view class='topContainer'>
-    <image class='userImage' src="{{imageUrl}}" mode='aspectFill'></image>
+    <image class='userImage' src="{{userImageUrl}}" mode='aspectFill'></image>
     <text class='userName'>{{userName}}</text>
   </view>
 
@@ -10,7 +10,6 @@
   </view>
 
   <view class='bottomContainer' wx:if='{{imageUrl.length > 0}}' >
-    <image class='contentImage' src='{{imageUrl}}'mode='aspectFill'></image>
     <image class='contentImage' src='{{imageUrl}}'mode='aspectFill'></image>
   </view>
   <text class='date'>{{date}}</text>

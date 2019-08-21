@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    menuItems: ["周杰伦", "林俊杰", "王力宏", "李荣浩", "陈奕迅", "毛不易", "五月天", "梁博", "邓紫棋", "许嵩", "汪苏泷", "王菲"],
+    menuItems: ["周杰伦", "林俊杰", "王力宏", "李荣浩", "陈奕迅", "毛不易", "五月天", "梁博", "邓紫棋", "许嵩", "汪苏泷", "王菲" , "..."],
     menuItemId:"item0",
     currentIndex:0,
     string:"0",
@@ -19,28 +19,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.request({
+      url: 'http://10.216.0.152/api/list',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      success: function (res) {
+        that.setData({
+          arrayList: res.data.data,
+        })
+        console.log(that.data.arrayList)
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var that = this;
-    wx.request({
-      url:'http://10.216.0.152/api/list',
-      method: 'GET',
-      headers: {
-        'Content-Type':'application/json;charset=utf-8'
-      },
-      success: function (res) {
-        that.setData({
-          arrayList: res.data,
-        })
-        // console.log(that.data.arrayList)
-        // WxParse.wxParse('article', 'html', article, that, 5);
-      }
-    })
+    
   },
 
   /**
@@ -95,6 +94,5 @@ Page({
       currentIndex: index,
       menuItemId: `item${index == 0 ? 0 : index}`,
     })
-    
   },
 })

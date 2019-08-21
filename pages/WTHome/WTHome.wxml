@@ -5,7 +5,11 @@
   </view>
 </scroll-view>
 
+<!-- 
+<scroll-view class='listContainer'style="height:{{windowHeight}}" scroll-y bindscrolltolower="lower">
+  <homelist_item wx:for='{{arrayList}}' wx:for-item="item" data="{{item}}" text="{{item.text}}" date="{{item.date}}" imageUrl="{{item.imageUrl}}" bind:homeItemTap="homeItemTap"></homelist_item>
+</scroll-view> -->
 
-<view class='listContainer' wx:for="{{arrayList}}">
-  <homelist_item data="{{arrayList.index}}"></homelist_item>
+<view class="listContainer">
+  <homelist_item wx:for="{{arrayList}}" wx:for-item="item" data="{{item}}" text="{{item.lyric}}" date="{{item.updated_at}}" imageUrl="{{item.images}}" userName="{{item.nickname}}" userImageUrl="{{item.avatar}}"></homelist_item>
 </view>
