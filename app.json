@@ -22,7 +22,7 @@
     "list": [
       {
         "pagePath": "pages/WTHome/WTHome",
-        "text": "首页",
+        "text": "社交",
         "iconPath": "/images/tabBar/wt_tab_icon_home_normal.png",
         "selectedIconPath": "/images/tabBar/wt_tab_icon_home_selected.png"
       },

@@ -1,16 +1,18 @@
 <view class='container'>
 
   <view class='topContainer'>
-    <image class='userImage' src="{{userImageUrl}}" mode='aspectFill'></image>
-    <text class='userName'>{{userName}}</text>
+    <image class='userImage' src="{{avatar}}" mode='aspectFill'></image>
+    <text class='userName'>{{nickname}}</text>
+    <text class='singer'>歌手：{{singer}}</text>
+    <text class='song_name'>—— {{song_name}}</text>
   </view>
 
   <view class='centerContainer'>
-    <text class='text'>{{text}}</text>
+    <text class='text'>{{lyric}}</text>
   </view>
 
-  <view class='bottomContainer' wx:if='{{imageUrl.length > 0}}' >
-    <image class='contentImage' src='{{imageUrl}}'mode='aspectFill'></image>
+  <view class='bottomContainer' wx:if='{{images.length > 0}}' >
+    <image class='contentImage' src='{{images}}'mode='aspectFill'></image>
   </view>
   <text class='date'>{{date}}</text>
 </view>

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "首页",
+  "navigationBarTitleText": "社交",
   "usingComponents": {
     "homelist_item":"/components/homeListItem/homeListItem"
   }
