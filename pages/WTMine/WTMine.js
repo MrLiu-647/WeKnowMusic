@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    response: {},
+    response: [],
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -16,7 +16,7 @@ Page({
     secondTitleImages: ['/images/more/wt_more_icon_skill.png', '/images/more/wt_more_icon_star.png', '/images/more/wt_more_icon_class.png', '/images/more/wt_more_icon_train.png', '/images/more/wt_more_icon_weixin.png', '/images/more/wt_more_icon_about.png', '/images/more/wt_more_icon_recruit.png'],
     links: ['http://study.qiyun.360.cn', 'https://code.360.cn/activity/detail?id=8', 'https://code.360.cn/activity/detail?id=6', 'https://code.360.cn/course','http://hr.360.cn/list','',''],
     // dates: ['2019-06-13 77:77:77', '2019-06-13 66:66:66', '2019-06-13 55:55:55', '2019-06-13 44:44:44', '2019-06-13 33:33:33', '2019-06-13 22:22:22', '2019-06-13 11:11:11']
-    dates: {}
+    dates: []
   },
 
   /**
@@ -61,20 +61,39 @@ Page({
           return false;
         }
         // todo
-        console.log(res.data)
-        response: res.data
+        that.setData({
+          response: res.data.data
+        })
       },
       fail: function() {
         wx.showToast({
           title: '个人中心请求服务器错误',
           duration: 2000
         });
+      },
+      complete: function() {
+        var tmpMaintitles = [];
+        var tmpTitleImages = [];
+        var tmpSecondTitleImages = [];
+        var tmpDates = [];
+
+        for (var i = 0; i < that.data.response.length; i++) {
+          var obj = that.data.response[i];
+          tmpMaintitles.push(obj.lyric);
+          tmpTitleImages.push(obj.images);
+          // tmpSecondTitleImages.push(obj.updated_at);
+          tmpDates.push(obj.updated_at);
+        }
+        that.setData({
+          maintitles: tmpMaintitles,
+          titleImages: tmpTitleImages,
+          secondTitleImages: tmpSecondTitleImages,
+          dates: tmpDates,
+        })
       }
     })
 
-    for (var i = 0; i < response.length; i++) {
-      dates.push(response(i).updated_at.date);
-    }
+    
     
   },
 

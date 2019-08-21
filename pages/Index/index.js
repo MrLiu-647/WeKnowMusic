@@ -36,10 +36,7 @@ Page({
                     gender: response.userInfo.gender ? response.userInfo.gender : '',
                     language: response.userInfo.language ? response.userInfo.language : '',
                   }
-<<<<<<< Updated upstream
-=======
                   // app.globalData.userInfo = data;
->>>>>>> Stashed changes
                   wx.request({
                     url: 'http://10.216.0.152/api/login',
                     method: 'POST',
