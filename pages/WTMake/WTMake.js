@@ -634,6 +634,8 @@ Page({
     allText = {
       idx: allText.length - 1,
       someText: "点击添加心情",
+      someText1: "hello",
+      someText2: "world",
       fontColor: this.fontColor ? this.fontColor : 'rgba(20,20,20,0.8)',
       fontSize: this.fontSize ? this.fontSize : 14,
       fontStyle: 'normal',
@@ -658,9 +660,11 @@ Page({
   
     allText = {
       idx: allText.length - 1,
-      someText: app.globalData.song_name + "\n" + app.globalData.singer + "\n" + app.globalData.checked,
+      someText: app.globalData.song_name,
+      someText1: "\n" + app.globalData.singer,
+      someText2: "\n" + app.globalData.checked,
       fontColorwrfwrr: this.fontColor ? this.fontColor : 'rgba(20,20,20,0.8)',
-      fontSize: this.fontSize ? this.fontSize : 24,
+      fontSize: this.fontSize ? this.fontSize : 14,
       fontStyle: 'normal',
       fontWeight: 'normal',
       textL: (750 - 20) * this.deviceRatio / 2,
@@ -688,7 +692,7 @@ Page({
   competeAddText() {
     var self = this
     var allText = this.data.allText
-    if (allText.someText == "点击输入文字" || allText.someText == "") {
+    if (allText.someText == "点击输入文字" || allText.someText == "" || allText.someText1 == "点击输入文字" || allText.someText1 == "" || allText.someText2 == "点击输入文字" || allText.someText2 == "") {
       this.cancelAddText()
     } else {
       wx.showLoading({
@@ -720,7 +724,9 @@ Page({
       ctx.font = allText.fontStyle + ' ' + allText.fontWeight + ' ' + canvasFontSize + 'px sans-serif'
       ctx.setTextAlign('left')
       ctx.setTextBaseline('top')
-      ctx.fillText(allText.someText, (allText.textL - self.startX) * initRatio, (allText.textT - self.startY + 5) * initRatio)
+      ctx.fillText(allText.someText, (allText.textL - self.startX + 5) * initRatio, (allText.textT - self.startY + 5) * initRatio)
+      ctx.fillText(allText.someText1, (allText.textL - self.startX + 5) * initRatio, (allText.textT - self.startY + 25) * initRatio)
+      ctx.fillText(allText.someText2, (allText.textL - self.startX + 5) * initRatio, (allText.textT - self.startY + 45) * initRatio)
       ctx.draw()
       //保存图片到临时路径
       saveImgUseTempCanvas(self, 100, null)

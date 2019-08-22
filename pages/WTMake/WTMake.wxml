@@ -38,7 +38,7 @@
 <!-- 添加歌词 -->
   <view class="imageView" wx:if="{{page==='textlyricPage'}}" style="height:{{imgViewHeight}}px">
     <image src="{{tempImageSrc}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px" disable-scroll="true"></image>
-    <text wx:if="{{allText.isTextActive}}" bindtouchstart="{{allText.isTextActive?'textMoveStart':null}}" bindtouchmove="{{allText.isTextActive?'textMove':null}}"class="active-text" style="left:{{allText.textL}}px;top:{{allText.textT}}px;font-size:{{allText.fontSize}}px;color:{{allText.fontColor}};font-style:{{allText.fontStyle}};font-weight:{{allText.fontWeight}}">{{allText.someText}}</text> 
+    <text wx:if="{{allText.isTextActive}}" bindtouchstart="{{allText.isTextActive?'textMoveStart':null}}" bindtouchmove="{{allText.isTextActive?'textMove':null}}"class="active-text" style="left:{{allText.textL}}px;top:{{allText.textT}}px;font-size:{{allText.fontSize}}px;color:{{allText.fontColor}};font-style:{{allText.fontStyle}};font-weight:{{allText.fontWeight}}">{{allText.someText}}{{allText.someText1}}{{allText.someText2}}</text> 
     <input focus="{{inputFocus}}"confirm-type="done" bindinput="inputLyric" style="position:absolute;left:-9999px;"></input>
   </view>
   <!-- 涂鸦页面 -->
