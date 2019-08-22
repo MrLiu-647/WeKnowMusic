@@ -634,8 +634,8 @@ Page({
     allText = {
       idx: allText.length - 1,
       someText: "点击添加心情",
-      someText1: "hello",
-      someText2: "world",
+      someText1: " ",
+      someText2: " ",
       fontColor: this.fontColor ? this.fontColor : 'rgba(20,20,20,0.8)',
       fontSize: this.fontSize ? this.fontSize : 14,
       fontStyle: 'normal',
